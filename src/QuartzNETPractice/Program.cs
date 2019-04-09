@@ -37,7 +37,7 @@ namespace QuartzNETPractice
                     .WithIdentity("trigger1", "group1")
                     .StartNow()
                     //.WithSimpleSchedule(x => x.WithIntervalInSeconds(10).RepeatForever()) // 间隔10s秒执行一次
-                    .WithCronSchedule("0 57 10 * * ?") // 每天10:57执行
+                    .WithCronSchedule("0 20 11 ? * 2-6") // 周一到周五10:57执行
                     .Build();
 
                 await scheduler.ScheduleJob(job, trigger);
